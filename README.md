@@ -172,5 +172,5 @@ This project is open source under the [MIT License](LICENSE). Feel free to use i
 
 ## 💜 Credits
 
-Made with ❤️ by [GitHub for Beginners](https://gh.io/gfb) and [GitHub Copilot](ttps://gh.io/gfb-copilot).
+Made with ❤️ by [GitHub for Beginners](https://gh.io/gfb) and [GitHub Copilot](https://gh.io/gfb-copilot).
 

@@ -1,4 +1,4 @@
-# Contributing to Retro-Futuristic Portfolio
+# Contributing to Gitfolio
 
 First off, thanks for taking the time to contribute! 🎉
 

@@ -188,6 +188,12 @@ export default function Home() {
 }
 
 function ProjectCard({ title, description, tags, color, href }: { title: string, description: string, tags: string[], color: "cyan" | "fuchsia" | "purple" | "yellow", href: string }) {
+  // Valid color options for the card styling
+  const validColors = ["cyan", "fuchsia", "purple", "yellow"] as const;
+  
+  // Runtime validation: default to "cyan" if an invalid color is provided
+  const safeColor = validColors.includes(color) ? color : "cyan";
+
   const colorClasses = {
     cyan: "group-hover:border-cyan-500/50 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]",
     fuchsia: "group-hover:border-fuchsia-500/50 group-hover:shadow-[0_0_20px_rgba(232,121,249,0.2)]",
@@ -203,12 +209,12 @@ function ProjectCard({ title, description, tags, color, href }: { title: string,
   };
 
   return (
-    <Link href={href} className={`group block space-y-4 p-6 bg-[#0a0a1a] border border-cyan-900/30 transition-all duration-300 ${colorClasses[color]}`}>
+    <Link href={href} className={`group block space-y-4 p-6 bg-[#0a0a1a] border border-cyan-900/30 transition-all duration-300 ${colorClasses[safeColor]}`}>
       <div className="flex justify-between items-start">
-        <h3 className={`text-xl font-bold text-white tracking-wider transition-colors ${textColors[color]}`}>
+        <h3 className={`text-xl font-bold text-white tracking-wider transition-colors ${textColors[safeColor]}`}>
           {title}
         </h3>
-        <ArrowUpRightIcon className={`w-5 h-5 text-cyan-700 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 ${textColors[color]}`} />
+        <ArrowUpRightIcon className={`w-5 h-5 text-cyan-700 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 ${textColors[safeColor]}`} />
       </div>
       <p className="text-sm text-cyan-100/60 leading-relaxed font-light border-l border-cyan-900/50 pl-4">
         {description}

@@ -132,7 +132,7 @@ Your site will be live at: `https://YOUR_USERNAME.github.io/YOUR_REPO_NAME`
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| [Next.js](https://nextjs.org/) | 15 | React framework with App Router |
+| [Next.js](https://nextjs.org/) | 16 | React framework with App Router |
 | [React](https://react.dev/) | 19 | UI library |
 | [Tailwind CSS](https://tailwindcss.com/) | 4 | Utility-first styling |
 | [TypeScript](https://www.typescriptlang.org/) | 5 | Type safety |

@@ -7,7 +7,7 @@ This project uses GitHub issues to track bugs and feature requests. Please searc
 
 For help or questions about using this project, please open a new issue. The maintainers and community will try to help you as best as they can.
 
-**PLANVENTURE** is not actively developed but is maintained by GitHub staff **and the community**. We will do our best to respond to support and community questions in a timely manner. 
+**GITFOLIO** is not actively developed but is maintained by GitHub staff **and the community**. We will do our best to respond to support and community questions in a timely manner. 
 
 
 ## GitHub Support Policy

@@ -107,9 +107,8 @@ export default function Home() {
         {/* Philosophy / Approach */}
         <section id="philosophy" className="py-20 grid md:grid-cols-12 gap-12 border-t border-cyan-900/30">
           <div className="md:col-span-4 space-y-8">
-            {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
             <h2 className="text-2xl font-bold tracking-widest text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.6)]">
-              // ABOUT_ME
+              {"// ABOUT_ME"}
             </h2>
             
             {/* Profile Image - Replace src with your image in /public */}

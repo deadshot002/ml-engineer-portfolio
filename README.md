@@ -90,7 +90,6 @@ git add .
 git commit -m "Add security demo scenarios"
 git push origin security-for-beginners
 ```
-
 2. **Enable Advanced Security features:**
    - Go to repository Settings → Security & analysis
    - Enable Dependency graph
@@ -141,10 +140,6 @@ After working through this demo, you should understand:
 3. How to interpret and remediate security alerts
 4. Best practices for secure coding
 5. How to configure security policies for your repositories
-
-## 📄 License
-
-MIT License - See [LICENSE](LICENSE) file for details.
 
 ---
 

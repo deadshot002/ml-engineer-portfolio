@@ -12,17 +12,14 @@ export default function handler(req, res) {
     return res.status(400).json({ error: 'Filename is required' });
   }
 
-  // Securely construct a path under the uploads directory
-  const uploadsRoot = path.join(process.cwd(), 'uploads');
-  const resolvedPath = path.resolve(uploadsRoot, String(filename));
-
-  // Ensure the resolved path is within the uploads root to prevent path traversal
-  if (!resolvedPath.startsWith(uploadsRoot + path.sep) && resolvedPath !== uploadsRoot) {
-    return res.status(400).json({ error: 'Invalid filename' });
-  }
-
+  // VULNERABILITY: Path Traversal
+  // User input is used directly to construct file paths
+  // An attacker could use input like: "../../../../etc/passwd"
+  const filePath = path.join(process.cwd(), 'uploads', filename);
+  
   try {
-    const fileContent = fs.readFileSync(resolvedPath, 'utf8');
+    // Reading file without proper validation
+    const fileContent = fs.readFileSync(filePath, 'utf8');
     
     res.status(200).json({ 
       filename: filename,

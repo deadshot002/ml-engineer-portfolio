@@ -2,6 +2,15 @@
 // DO NOT USE IN PRODUCTION
 // This API endpoint demonstrates XSS vulnerabilities for CodeQL detection
 
+function escapeHtml(str) {
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 export default function handler(req, res) {
   const { message } = req.query;
   
@@ -20,7 +29,7 @@ export default function handler(req, res) {
       </head>
       <body>
         <h1>Your Message:</h1>
-        <div>${message}</div>
+        <div>${escapeHtml(message)}</div>
       </body>
     </html>
   `;

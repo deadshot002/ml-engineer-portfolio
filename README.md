@@ -1,6 +1,6 @@
 # ⚡ GITFOLIO
 
-A beginner-friendly developer portfolio template with a retro-futuristic cyberpunk aesthetic. Fork it, customize it, deploy it - no design skills required.
+A beginner-friendly developer portfolio template with a retro-futuristic cyberpunk aesthetic. Fork it, customize it, deploy it - no design skills required, (promise!)
 
 ![Gitfolio Preview](https://img.shields.io/badge/Next.js-16.0.10-black?style=flat-square&logo=next.js) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css) ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=flat-square&logo=typescript)
 

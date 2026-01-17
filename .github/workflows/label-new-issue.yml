@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       issues: write
+      contents: read
       
     steps:
       - name: Checkout repository
@@ -19,4 +20,3 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           LABEL: "triage"
         run: gh issue edit "$ISSUE_NUMBER" --add-label "$LABEL"
-                                                  

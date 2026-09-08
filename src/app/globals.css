@@ -1,0 +1,473 @@
+@import "tailwindcss";
+
+/* =========================================================
+   LOKESH.OS — GLOBAL DESIGN SYSTEM
+   ========================================================= */
+
+:root {
+  --background: #030308;
+  --foreground: #e2e8f0;
+
+  --cyan: #22d3ee;
+  --cyan-bright: #67e8f9;
+  --purple: #a855f7;
+  --fuchsia: #e879f9;
+  --blue: #3b82f6;
+
+  --surface: #06060d;
+  --surface-light: #0a0a12;
+
+  --border: rgba(148, 163, 184, 0.12);
+  --border-cyan: rgba(34, 211, 238, 0.2);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(34, 211, 238, 0.25);
+  color: #ecfeff;
+}
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #030308;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(34, 211, 238, 0.25);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 211, 238, 0.55);
+}
+
+/* Firefox */
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 211, 238, 0.3) #030308;
+}
+
+/* =========================================================
+   LINKS
+   ========================================================= */
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   CYBERPUNK GRID
+   ========================================================= */
+
+.cyber-grid {
+  background-image:
+    linear-gradient(
+      rgba(34, 211, 238, 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(34, 211, 238, 0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 48px 48px;
+}
+
+/* =========================================================
+   SCANLINES
+   ========================================================= */
+
+.scanlines {
+  position: relative;
+}
+
+.scanlines::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px
+  );
+
+  background-size: 100% 5px;
+}
+
+/* =========================================================
+   CRT GLOW
+   ========================================================= */
+
+.crt-glow {
+  text-shadow:
+    0 0 5px rgba(34, 211, 238, 0.4),
+    0 0 20px rgba(34, 211, 238, 0.15);
+}
+
+/* =========================================================
+   CYAN GLOW
+   ========================================================= */
+
+.glow-cyan {
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.15),
+    0 0 40px rgba(34, 211, 238, 0.05);
+}
+
+.glow-cyan-strong {
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.4),
+    0 0 30px rgba(34, 211, 238, 0.15),
+    0 0 70px rgba(34, 211, 238, 0.05);
+}
+
+/* =========================================================
+   TEXT GLOW
+   ========================================================= */
+
+.text-glow-cyan {
+  text-shadow:
+    0 0 5px rgba(34, 211, 238, 0.8),
+    0 0 20px rgba(34, 211, 238, 0.3);
+}
+
+.text-glow-purple {
+  text-shadow:
+    0 0 5px rgba(168, 85, 247, 0.8),
+    0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* =========================================================
+   GRADIENT ANIMATION
+   ========================================================= */
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* =========================================================
+   FLOATING GLOW
+   ========================================================= */
+
+.animate-float {
+  animation: floating 6s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* =========================================================
+   BLINK
+   ========================================================= */
+
+.animate-blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   PULSE GLOW
+   ========================================================= */
+
+.animate-glow {
+  animation: glowPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.65;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   TERMINAL CURSOR
+   ========================================================= */
+
+.terminal-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 15px;
+  background: var(--cyan);
+  vertical-align: middle;
+
+  box-shadow:
+    0 0 8px rgba(34, 211, 238, 0.8);
+
+  animation: cursorBlink 1s steps(2, start) infinite;
+}
+
+@keyframes cursorBlink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   HOLOGRAPHIC BORDER
+   ========================================================= */
+
+.holo-border {
+  position: relative;
+}
+
+.holo-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 211, 238, 0.5),
+    rgba(168, 85, 247, 0.5),
+    transparent
+  );
+
+  opacity: 0;
+  transition: opacity 0.5s ease;
+
+  pointer-events: none;
+}
+
+.holo-border:hover::before {
+  opacity: 1;
+}
+
+/* =========================================================
+   DATA STREAM
+   ========================================================= */
+
+.data-stream {
+  overflow: hidden;
+  position: relative;
+}
+
+.data-stream::after {
+  content: "010101101001011010010110010101100101101001011010";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  color: rgba(34, 211, 238, 0.08);
+  font-size: 8px;
+  letter-spacing: 5px;
+  line-height: 18px;
+
+  white-space: normal;
+  word-break: break-all;
+
+  animation: dataMove 12s linear infinite;
+
+  pointer-events: none;
+}
+
+@keyframes dataMove {
+  from {
+    transform: translateY(-20%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* =========================================================
+   REVEAL ANIMATION
+   ========================================================= */
+
+.reveal {
+  animation: reveal 0.8s ease-out both;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   HUD CORNERS
+   ========================================================= */
+
+.hud-corners {
+  position: relative;
+}
+
+.hud-corners::before,
+.hud-corners::after {
+  content: "";
+  position: absolute;
+
+  width: 18px;
+  height: 18px;
+
+  pointer-events: none;
+}
+
+.hud-corners::before {
+  top: 0;
+  left: 0;
+
+  border-top: 1px solid rgba(34, 211, 238, 0.7);
+  border-left: 1px solid rgba(34, 211, 238, 0.7);
+}
+
+.hud-corners::after {
+  bottom: 0;
+  right: 0;
+
+  border-bottom: 1px solid rgba(34, 211, 238, 0.7);
+  border-right: 1px solid rgba(34, 211, 238, 0.7);
+}
+
+/* =========================================================
+   GLITCH EFFECT
+   ========================================================= */
+
+.glitch {
+  position: relative;
+}
+
+.glitch:hover {
+  animation: glitch 0.3s linear;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  20% {
+    transform: translate(-2px, 1px);
+  }
+
+  40% {
+    transform: translate(2px, -1px);
+  }
+
+  60% {
+    transform: translate(-1px, 2px);
+  }
+
+  80% {
+    transform: translate(1px, -2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .cyber-grid {
+    background-size: 32px 32px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,4 +1,7 @@
 import SectionHeader from "../ui/SectionHeader";
+import ScrollReveal from "../ui/ScrollReveal";
+import StaggerContainer from "../ui/StaggerContainer";
+import StaggerItem from "../ui/StaggerItem";
 import LabCard from "./LabCard";
 
 const labExperiments = [
@@ -38,23 +41,30 @@ export default function MLLab() {
       id="ml-lab"
       className="py-24 scroll-mt-12"
     >
-      <SectionHeader
-        number="02"
-        title="ML LAB"
-        subtitle="EXPERIMENTS / RESEARCH / PROTOTYPES"
-      />
+      {/* SECTION HEADER */}
+      <ScrollReveal y={40}>
+        <SectionHeader
+          number="02"
+          title="ML LAB"
+          subtitle="EXPERIMENTS / RESEARCH / PROTOTYPES"
+        />
+      </ScrollReveal>
 
-      <div className="mt-12 grid md:grid-cols-2 gap-5">
-        {labExperiments.map((experiment) => (
-          <LabCard
-            key={experiment.status}
-            title={experiment.title}
-            description={experiment.description}
-            tags={experiment.tags}
-            status={experiment.status}
-          />
-        ))}
-      </div>
+      {/* EXPERIMENT CARDS */}
+      <StaggerContainer>
+        <div className="mt-12 grid md:grid-cols-2 gap-5">
+          {labExperiments.map((experiment) => (
+            <StaggerItem key={experiment.status}>
+              <LabCard
+                title={experiment.title}
+                description={experiment.description}
+                tags={experiment.tags}
+                status={experiment.status}
+              />
+            </StaggerItem>
+          ))}
+        </div>
+      </StaggerContainer>
     </section>
   );
 }

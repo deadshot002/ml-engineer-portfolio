@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "GitFolio - Developer Portfolio Template",
-  description: "Minimal and modern developer portfolio template built with Next.js and Tailwind CSS.",
+  title: "Lokesh | ML Engineer × Electrical Engineer",
+  description:
+    "Portfolio of Lokesh — ML Engineer and Electrical Engineer building intelligent systems across software, machine learning, and electrical engineering.",
 };
 
 export default function RootLayout({
@@ -24,6 +25,39 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                if ("scrollRestoration" in history) {
+                  history.scrollRestoration = "manual";
+                }
+
+                var navigation =
+                  performance.getEntriesByType("navigation")[0];
+
+                if (
+                  navigation &&
+                  navigation.type === "reload"
+                ) {
+                  if (window.location.hash) {
+                    history.replaceState(
+                      null,
+                      document.title,
+                      window.location.pathname +
+                        window.location.search
+                    );
+                  }
+
+                  window.scrollTo(0, 0);
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

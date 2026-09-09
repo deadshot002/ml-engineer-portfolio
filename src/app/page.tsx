@@ -5,9 +5,10 @@ import Projects from "../components/projects/Projects";
 import MLLab from "../components/ml-lab/MLLab";
 import About from "../components/about/About";
 import Experience from "../components/experience/Experience";
-import CommandCenter from "../components/terminal/CommandCenter";
+import CommandCenter from "../components/command-center/CommandCenter";
 import Contact from "../components/contact/Contact";
 import Footer from "../components/layout/Footer";
+import ScrollReveal from "../components/ui/ScrollReveal";
 
 export default function Home() {
   return (
@@ -17,19 +18,70 @@ export default function Home() {
       <Navbar />
 
       <main className="relative z-10 max-w-7xl mx-auto px-5 md:px-8 pt-28 pb-20">
-        <Hero />
 
-        <Projects />
+        {/* HERO */}
+        <section id="hero">
+          <Hero />
+        </section>
 
-        <MLLab />
+        {/* PROJECTS */}
+        <section
+          id="projects"
+          className="scroll-section section-glow"
+        >
+          <Projects />
+        </section>
 
-        <About />
+        {/* ML LAB */}
+        <section
+          id="ml-lab"
+          className="scroll-section section-glow"
+        >
+          <ScrollReveal y={60} delay={0.08}>
+            <MLLab />
+          </ScrollReveal>
+        </section>
 
-        <Experience />
+        {/* ABOUT */}
+        <section
+          id="about"
+          className="scroll-section section-glow"
+        >
+          <ScrollReveal y={50} delay={0.05}>
+            <About />
+          </ScrollReveal>
+        </section>
 
-        <CommandCenter />
+        {/* EXPERIENCE */}
+        <section
+          id="experience"
+          className="scroll-section section-glow"
+        >
+          <ScrollReveal y={50} delay={0.05}>
+            <Experience />
+          </ScrollReveal>
+        </section>
 
-        <Contact />
+        {/* COMMAND CENTER */}
+        <section
+          id="command-center"
+          className="scroll-section section-glow"
+        >
+          <ScrollReveal y={50} delay={0.05}>
+            <CommandCenter />
+          </ScrollReveal>
+        </section>
+
+        {/* CONTACT */}
+        <section
+          id="contact"
+          className="scroll-section section-glow"
+        >
+          <ScrollReveal y={50} delay={0.05}>
+            <Contact />
+          </ScrollReveal>
+        </section>
+
       </main>
 
       <Footer />

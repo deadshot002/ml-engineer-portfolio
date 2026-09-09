@@ -44,26 +44,63 @@ export default function ProjectCard({
   return (
     <Link
       href={project.github}
-      className={`group relative block p-6 md:p-7 border border-slate-800 bg-[#06060d]/90 transition-all duration-500 ${style.border} ${style.glow}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`
+        group
+        relative
+        block
+        h-full
+        p-6
+        md:p-7
+        border
+        border-slate-800
+        bg-[#06060d]/90
+        transition-all
+        duration-500
+        hover:-translate-y-1
+        ${style.border}
+        ${style.glow}
+      `}
     >
-      {/* Number */}
+      {/* Number + Arrow */}
       <div className="flex items-start justify-between">
         <span className={`text-xs font-bold ${style.number}`}>
           {project.number}
         </span>
 
         <ArrowUpRightIcon
-          className={`w-5 h-5 text-slate-700 transition-all duration-300 group-hover:-translate-y-1 group-hover:translate-x-1 ${style.title}`}
+          className={`
+            w-5
+            h-5
+            text-slate-700
+            transition-all
+            duration-300
+            group-hover:-translate-y-1
+            group-hover:translate-x-1
+            ${style.title}
+          `}
         />
       </div>
 
+      {/* Content */}
       <div className="mt-8">
         <div className="text-[9px] tracking-[0.25em] text-slate-600">
           {project.category}
         </div>
 
         <h3
-          className={`mt-2 text-xl md:text-2xl font-bold tracking-wide text-white transition-colors ${style.title}`}
+          className={`
+            mt-2
+            text-xl
+            md:text-2xl
+            font-bold
+            tracking-wide
+            text-white
+            transition-colors
+            duration-300
+            ${style.title}
+          `}
         >
           {project.title}
         </h3>
@@ -78,15 +115,57 @@ export default function ProjectCard({
         {project.tags.map((tag) => (
           <span
             key={tag}
-            className="px-2 py-1 border border-slate-800 text-[8px] tracking-[0.15em] text-slate-600 group-hover:border-slate-700 group-hover:text-slate-400 transition-colors"
+            className="
+              px-2
+              py-1
+              border
+              border-slate-800
+              text-[8px]
+              tracking-[0.15em]
+              text-slate-600
+              transition-all
+              duration-300
+              group-hover:border-slate-700
+              group-hover:text-slate-400
+            "
           >
             {tag}
           </span>
         ))}
       </div>
 
-      {/* Bottom line */}
-      <div className="absolute bottom-0 left-0 h-px w-0 bg-cyan-400 group-hover:w-full transition-all duration-700" />
+      {/* Bottom scan line */}
+      <div
+        className="
+          absolute
+          bottom-0
+          left-0
+          h-px
+          w-0
+          bg-cyan-400
+          group-hover:w-full
+          transition-all
+          duration-700
+        "
+      />
+
+      {/* Corner indicator */}
+      <div
+        className={`
+          absolute
+          top-0
+          right-0
+          w-2
+          h-2
+          border-t
+          border-r
+          opacity-0
+          transition-opacity
+          duration-300
+          group-hover:opacity-100
+          ${style.border.replace("group-hover:", "")}
+        `}
+      />
     </Link>
   );
 }

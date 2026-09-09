@@ -11,7 +11,7 @@ import { skills } from "../../data/skills";
 
 const basePath =
   process.env.NODE_ENV === "production"
-    ? "/gfbs3-portfolio-demo"
+    ? "/ml-engineer-portfolio"
     : "";
 
 export default function About() {
@@ -34,10 +34,7 @@ export default function About() {
 
         {/* ───────── PROFILE IMAGE ───────── */}
         <div className="lg:col-span-4">
-          <ScrollReveal
-            y={0}
-            delay={0.05}
-          >
+          <ScrollReveal y={0} delay={0.05}>
             <div className="relative aspect-[4/5] border border-slate-800 bg-[#07070d] overflow-hidden group">
 
               {/* Dark gradient */}
@@ -78,10 +75,7 @@ export default function About() {
 
         {/* ───────── ABOUT TEXT ───────── */}
         <div className="lg:col-span-8">
-          <ScrollReveal
-            y={0}
-            delay={0.12}
-          >
+          <ScrollReveal y={0} delay={0.12}>
             <div className="max-w-3xl space-y-7 text-sm md:text-base leading-8 text-slate-400">
 
               <p>
@@ -117,6 +111,7 @@ export default function About() {
           {/* Engineering principles */}
           <StaggerContainer>
             <div className="grid sm:grid-cols-3 gap-3 mt-10">
+
               <StaggerItem>
                 <MiniCard
                   title="BUILD"
@@ -137,6 +132,7 @@ export default function About() {
                   text="Learn, optimize and improve."
                 />
               </StaggerItem>
+
             </div>
           </StaggerContainer>
         </div>

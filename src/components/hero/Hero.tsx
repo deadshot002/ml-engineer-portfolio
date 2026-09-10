@@ -243,7 +243,6 @@ export default function Hero() {
 
         <div
           className="
-            hidden
             lg:block
             relative
             pt-2

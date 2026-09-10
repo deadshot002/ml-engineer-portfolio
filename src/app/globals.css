@@ -746,3 +746,148 @@ a {
     transform: none;
   }
 }
+
+/* =========================================================
+   RESPONSIVE TERMINAL
+   ========================================================= */
+
+.terminal-collapsible {
+  width: 100%;
+}
+
+/* Remove native browser arrow */
+.terminal-toggle {
+  list-style: none;
+}
+
+.terminal-toggle::-webkit-details-marker {
+  display: none;
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+/*
+  On desktop:
+  - Hide toggle
+  - Keep terminal permanently open
+*/
+
+@media (min-width: 1024px) {
+  .terminal-collapsible {
+    display: block;
+  }
+
+  .terminal-toggle {
+    display: none;
+  }
+
+  .terminal-content {
+    display: block;
+  }
+}
+
+/* =========================================================
+   MOBILE / TABLET
+   ========================================================= */
+
+@media (max-width: 1023px) {
+  .terminal-collapsible {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  /* Toggle bar */
+
+  .terminal-toggle {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 0.85rem 1rem;
+
+    cursor: pointer;
+
+    border: 1px solid rgba(34, 211, 238, 0.2);
+
+    background: rgba(2, 4, 10, 0.9);
+
+    color: var(--cyan);
+
+    font-family: monospace;
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    transition:
+      border-color 0.3s ease,
+      background 0.3s ease;
+  }
+
+  .terminal-toggle:hover {
+    border-color: rgba(34, 211, 238, 0.45);
+
+    background: rgba(6, 10, 18, 0.95);
+  }
+
+  /* Left side */
+
+  .terminal-toggle-left {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  /* Green status indicator */
+
+  .terminal-status-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #34d399;
+
+    box-shadow:
+      0 0 6px rgba(52, 211, 153, 0.8);
+  }
+
+  /* Arrow */
+
+  .terminal-toggle-icon {
+    font-size: 10px;
+
+    transition:
+      transform 0.3s ease;
+  }
+
+  .terminal-collapsible[open]
+    .terminal-toggle-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Content animation */
+
+  .terminal-content {
+    margin-top: 0.5rem;
+
+    animation: terminalDrop 0.35s ease-out;
+  }
+}
+
+@keyframes terminalDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

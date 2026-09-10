@@ -3,6 +3,7 @@ interface LabCardProps {
   description: string;
   tags: string[];
   status: string;
+  link: string;
 }
 
 export default function LabCard({
@@ -10,12 +11,17 @@ export default function LabCard({
   description,
   tags,
   status,
+  link,
 }: LabCardProps) {
   return (
-    <div
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
       className="
         group
         relative
+        block
         h-full
         overflow-hidden
         border
@@ -27,6 +33,8 @@ export default function LabCard({
         hover:-translate-y-1
         hover:border-cyan-400/30
         hover:shadow-[0_0_35px_rgba(34,211,238,0.08)]
+        focus:outline-none
+        focus:border-cyan-400/50
       "
     >
       {/* Top scan line */}
@@ -129,14 +137,34 @@ export default function LabCard({
               text-slate-600
               transition-all
               duration-300
-              hover:border-cyan-400/30
-              hover:text-cyan-300
-              hover:bg-cyan-400/[0.03]
+              group-hover:border-cyan-400/30
+              group-hover:text-cyan-300
+              group-hover:bg-cyan-400/[0.03]
             "
           >
             {tag}
           </span>
         ))}
+      </div>
+
+      {/* Visit indicator */}
+      <div
+        className="
+          mt-6
+          flex
+          items-center
+          gap-2
+          text-[9px]
+          tracking-[0.2em]
+          text-slate-700
+          transition-all
+          duration-300
+          group-hover:translate-x-1
+          group-hover:text-cyan-400/80
+        "
+      >
+        <span>OPEN EXPERIMENT</span>
+        <span>→</span>
       </div>
 
       {/* Bottom scan line */}
@@ -171,6 +199,6 @@ export default function LabCard({
           group-hover:opacity-100
         "
       />
-    </div>
+    </a>
   );
 }

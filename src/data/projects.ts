@@ -6,6 +6,7 @@ export interface Project {
   tags: string[];
   color: "cyan" | "purple" | "fuchsia" | "yellow";
   github: string;
+  link: string;
 }
 
 export const projects: Project[] = [
@@ -18,6 +19,7 @@ export const projects: Project[] = [
     tags: ["PYTHON", "PYTORCH", "SCIKIT-LEARN"],
     color: "cyan",
     github: "#",
+    link: "https://deadshot002.github.io/Projects-ML-Lab/",
   },
 
   {
@@ -29,6 +31,7 @@ export const projects: Project[] = [
     tags: ["PYTHON", "OPENCV", "YOLO", "PYTORCH"],
     color: "purple",
     github: "#",
+    link: "https://deadshot002.github.io/Projects-ML-Lab/",
   },
 
   {
@@ -40,6 +43,7 @@ export const projects: Project[] = [
     tags: ["MATLAB", "SIMULINK", "CONTROL", "POWER"],
     color: "fuchsia",
     github: "#",
+    link: "https://deadshot002.github.io/Projects-ML-Lab/",
   },
 
   {
@@ -51,5 +55,6 @@ export const projects: Project[] = [
     tags: ["REACT", "NEXT.JS", "TYPESCRIPT", "API"],
     color: "yellow",
     github: "#",
+    link: "https://deadshot002.github.io/Projects-ML-Lab/",
   },
 ];

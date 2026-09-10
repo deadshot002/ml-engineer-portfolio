@@ -33,17 +33,17 @@ export default function Contact() {
         {/* Social links */}
         <div className="mt-10 flex flex-wrap justify-center gap-4">
           <SocialLink
-            href="https://github.com"
+            href="https://github.com/deadshot002"
             label="GITHUB"
           />
 
           <SocialLink
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/lokeshjangirk/"
             label="LINKEDIN"
           />
 
           <SocialLink
-            href="mailto:your@email.com"
+            href="mailto:lokeshkumar991100@gmail.com"
             label="EMAIL"
           />
         </div>

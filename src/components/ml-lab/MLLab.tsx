@@ -11,6 +11,7 @@ const labExperiments = [
       "Experimenting with model architectures, training pipelines, optimization strategies, and evaluation workflows.",
     tags: ["PYTORCH", "TRAINING", "OPTIMIZATION"],
     status: "EXPERIMENT_01",
+    link: "https://deadshot002.github.io/Projects-ML-Lab/",
   },
   {
     title: "COMPUTER VISION",
@@ -18,6 +19,7 @@ const labExperiments = [
       "Exploring image processing, object detection, feature extraction, and real-time computer vision systems.",
     tags: ["OPENCV", "YOLO", "VISION"],
     status: "EXPERIMENT_02",
+    link: "https://deadshot002.github.io/Projects-ML-Lab/",
   },
   {
     title: "DATA PIPELINES",
@@ -25,6 +27,7 @@ const labExperiments = [
       "Building practical data preparation and preprocessing workflows for machine learning applications.",
     tags: ["PYTHON", "PANDAS", "NUMPY"],
     status: "EXPERIMENT_03",
+    link: "https://deadshot002.github.io/Projects-ML-Lab/",
   },
   {
     title: "MODEL INFERENCE",
@@ -32,6 +35,7 @@ const labExperiments = [
       "Testing model deployment, inference performance, and integration of trained models into software systems.",
     tags: ["INFERENCE", "API", "DEPLOYMENT"],
     status: "EXPERIMENT_04",
+    link: "https://deadshot002.github.io/Projects-ML-Lab/",
   },
 ];
 
@@ -60,6 +64,7 @@ export default function MLLab() {
                 description={experiment.description}
                 tags={experiment.tags}
                 status={experiment.status}
+                link={experiment.link}
               />
             </StaggerItem>
           ))}

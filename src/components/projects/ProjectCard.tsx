@@ -42,14 +42,10 @@ export default function ProjectCard({
   const style = styles[project.color];
 
   return (
-    <Link
-      href={project.github}
-      target="_blank"
-      rel="noopener noreferrer"
+    <div
       className={`
         group
         relative
-        block
         h-full
         p-6
         md:p-7
@@ -63,8 +59,17 @@ export default function ProjectCard({
         ${style.glow}
       `}
     >
+      {/* Main Project Link */}
+      <Link
+        href={project.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="absolute inset-0 z-0"
+        aria-label={`Open ${project.title}`}
+      />
+
       {/* Number + Arrow */}
-      <div className="flex items-start justify-between">
+      <div className="relative z-10 flex items-start justify-between pointer-events-none">
         <span className={`text-xs font-bold ${style.number}`}>
           {project.number}
         </span>
@@ -84,7 +89,7 @@ export default function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className="mt-8">
+      <div className="relative z-10 mt-8 pointer-events-none">
         <div className="text-[9px] tracking-[0.25em] text-slate-600">
           {project.category}
         </div>
@@ -111,7 +116,7 @@ export default function ProjectCard({
       </div>
 
       {/* Tags */}
-      <div className="mt-7 flex flex-wrap gap-2">
+      <div className="relative z-10 mt-7 flex flex-wrap gap-2 pointer-events-none">
         {project.tags.map((tag) => (
           <span
             key={tag}
@@ -133,6 +138,37 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
+
+      {/* GitHub Link */}
+      {project.github && project.github !== "#" && (
+        <Link
+          href={project.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            relative
+            z-20
+            mt-7
+            inline-flex
+            items-center
+            gap-2
+            border
+            border-slate-800
+            px-3
+            py-2
+            text-[9px]
+            tracking-[0.18em]
+            text-slate-600
+            transition-all
+            duration-300
+            hover:border-slate-600
+            hover:text-white
+          "
+        >
+          GITHUB
+          <span>↗</span>
+        </Link>
+      )}
 
       {/* Bottom scan line */}
       <div
@@ -166,6 +202,6 @@ export default function ProjectCard({
           ${style.border.replace("group-hover:", "")}
         `}
       />
-    </Link>
+    </div>
   );
 }
